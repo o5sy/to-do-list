@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main wrap">
+      <h1 class="main__title">To Do List</h1>
+
+      <article class="main__content">
+        <div class="write-form">
+          <input
+            class="write-form__input"
+            type="text"
+            id="inputfield"
+            placeholder="Write here.."
+          />
+          <button class="write-form__button" id="addButton">+</button>
+        </div>
+
+        <section class="todo-list todo-list--hold">
+          <h2 class="todo-list__title">On Hold</h2>
+          <div class="todo-list__items" id="holdList">
+            <div class="item">
+              <input type="checkbox" id="item" />
+              <label for="item">to-do-item</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item2" />
+              <label for="item2">to-do-item</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="todo-list todo-list--completed">
+          <h2 class="todo-list__title">Completed</h2>
+          <div class="todo-list__items" id="completedList">
+            <div class="item">
+              <input type="checkbox" id="item" />
+              <label for="item">to-do-item</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" id="item2" />
+              <label for="item2">to-do-item</label>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>

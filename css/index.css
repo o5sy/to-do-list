@@ -1,0 +1,295 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: NanumGothic;
+  src: url(/res/font/NanumGothic/NanumGothic-Regular.eot);
+  src: url(/res/font/NanumGothic/NanumGothic-Regular.eot?#iefix) format("embedded-opentype"), url(/res/font/NanumGothic/NanumGothic-Regular.woff2) format("woff2"), url(/res/font/NanumGothic/NanumGothic-Regular.woff) format("woff"), url(/res/font/NanumGothic/NanumGothic-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: NanumGothic;
+  src: url(/res/font/NanumGothic/NanumGothic-Bold.eot);
+  src: url(/res/font/NanumGothic/NanumGothic-Bold.eot?#iefix) format("embedded-opentype"), url(/res/font/NanumGothic/NanumGothic-Bold.woff2) format("woff2"), url(/res/font/NanumGothic/NanumGothic-Bold.woff) format("woff"), url(/res/font/NanumGothic/NanumGothic-Bold.ttf) format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+html {
+  font-family: NanumGothic;
+}
+
+.wrap {
+  width: 768px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 40px 20px;
+  }
+}
+
+.main__title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+}
+
+.main__content .write-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 44px;
+}
+
+.main__content .write-form__input {
+  height: 100%;
+  padding: 16px;
+  flex: 1;
+  margin-right: 20px;
+  border: 1px solid rgba(17, 17, 17, 0.32);
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.main__content .write-form__input::placeholder {
+  color: rgba(17, 17, 17, 0.32);
+}
+
+.main__content .write-form__input:focus {
+  outline: none;
+  border: 1px solid rgba(17, 17, 17, 0.64);
+}
+
+.main__content .write-form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 100%;
+  border: none;
+  padding: 0;
+  background-color: #526eff;
+  border-radius: 12px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.main__content .write-form__button:hover {
+  background-color: #3652e3;
+}
+
+.main__content .write-form__button:active {
+  background-color: #233fd1;
+}
+
+.main__content .todo-list:first-of-type {
+  margin-bottom: 36px;
+}
+
+.main__content .todo-list__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+
+.main__content .todo-list__items {
+  margin-left: 16px;
+}
+
+.main__content .todo-list__items .item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.main__content .todo-list__items .item > input[type="checkbox"] {
+  display: none;
+}
+
+.main__content .todo-list__items .item > input[type="checkbox"] + label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main__content .todo-list__items .item > input[type="checkbox"] + label::before {
+  content: " ";
+  display: inline-block;
+  background: url(/res/img/checkbox-default.svg) no-repeat center;
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+.main__content .todo-list__items .item > input[type="checkbox"] + label:hover::before {
+  background: url(/res/img/checkbox-hover.svg) no-repeat center;
+}
+
+.main__content .todo-list__items .item > input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+.main__content .todo-list__items .item > input[type="checkbox"]:checked + label::before {
+  background: url(/res/img/checkbox-checked.svg) no-repeat center;
+}
