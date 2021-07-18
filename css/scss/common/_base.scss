@@ -3,6 +3,12 @@
 @import "_mixin";
 @import "_size";
 
+button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
 html {
   font-family: NanumGothic;
 }

@@ -75,6 +75,9 @@ body {
         margin-left: 16px;
 
         .item {
+          display: flex;
+          // background-color: aqua;
+
           &:not(:last-child) {
             margin-bottom: 16px;
           }
@@ -82,6 +85,7 @@ body {
             display: none;
 
             + label {
+              flex: 1;
               display: flex;
               align-items: center;
               font-size: $s-h3;
@@ -117,6 +121,20 @@ body {
                     center;
                 }
               }
+            }
+          }
+          &__button--remove {
+            width: 24px;
+            height: 24px;
+
+            > svg {
+              fill: #526eff;
+            }
+            &:hover > svg {
+              fill: #3652e3;
+            }
+            &:active > svg {
+              fill: #233fd1;
             }
           }
         }
