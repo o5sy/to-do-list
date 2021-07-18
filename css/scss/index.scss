@@ -74,51 +74,50 @@ body {
       &__items {
         margin-left: 16px;
 
+        p {
+          height: 24px;
+          display: none;
+
+          &:only-child {
+            display: block;
+          }
+        }
         .item {
           display: flex;
 
           &:not(:last-child) {
             margin-bottom: 16px;
           }
-          > input[type="checkbox"] {
-            display: none;
+          &__content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
 
-            + label {
-              flex: 1;
-              display: flex;
-              align-items: center;
-              font-size: $s-h3;
-              cursor: pointer;
+            &::before {
+              content: " ";
 
+              // 인라인은 내용이 없으면 영역을 잡지 않음
+              // 따라서 inline-block으로 설정해서
+              // 형제 요소와는 인라인으로 배치되고 블록처럼 영역을 잡도록 함
+              display: inline-block;
+
+              background: url(/res/img/checkbox-default.svg) no-repeat center;
+              background-size: 24px 24px;
+              width: 24px;
+              height: 24px;
+              margin-right: 12px;
+            }
+            &:hover {
               &::before {
-                content: " ";
-
-                // 인라인은 내용이 없으면 영역을 잡지 않음
-                // 따라서 inline-block으로 설정해서
-                // 형제 요소와는 인라인으로 배치되고 블록처럼 영역을 잡도록 함
-                display: inline-block;
-
-                background: url(/res/img/checkbox-default.svg) no-repeat center;
-                background-size: 24px 24px;
-                width: 24px;
-                height: 24px;
-                margin-right: 12px;
-              }
-              &:hover {
-                &::before {
-                  background: url(/res/img/checkbox-hover.svg) no-repeat center;
-                }
+                background: url(/res/img/checkbox-hover.svg) no-repeat center;
               }
             }
+            &.checked {
+              text-decoration: line-through;
 
-            &:checked {
-              + label {
-                text-decoration: line-through;
-
-                &::before {
-                  background: url(/res/img/checkbox-checked.svg) no-repeat
-                    center;
-                }
+              &::before {
+                background: url(/res/img/checkbox-checked.svg) no-repeat center;
               }
             }
           }
@@ -141,12 +140,5 @@ body {
         }
       }
     }
-  }
-}
-
-// svg 색상 컨트롤
-svg {
-  &.svg--remove {
-    fill: $primary-color-default;
   }
 }

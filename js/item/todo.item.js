@@ -1,26 +1,20 @@
 export const TodoItem = (content) => {
   // 요소 생성
-  const wrap = document.createElement("div"),
-    checkboxInput = document.createElement("input"),
-    checkboxLabel = document.createElement("label"),
+  const wrap = document.createElement("li"),
+    contentP = document.createElement("p"),
     removeButton = document.createElement("button");
 
   // 클래스 추가
   wrap.classList.add("item");
+  contentP.classList.add("item__content");
   removeButton.classList.add("item__button--remove");
 
-  // 속성값 설정
-  checkboxInput.type = "checkbox";
-  checkboxInput.id = "item";
-  checkboxLabel.for = checkboxInput.id;
-
   // 데이터 대입
-  checkboxLabel.innerHTML = content;
+  contentP.innerHTML = content;
 
   // 요소 연결
-  wrap.appendChild(checkboxInput);
-  wrap.appendChild(checkboxLabel);
+  wrap.appendChild(contentP);
   wrap.appendChild(removeButton);
 
-  return wrap;
+  return { wrap: wrap, content: contentP, removeButton: removeButton };
 };
