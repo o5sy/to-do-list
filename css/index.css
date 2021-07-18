@@ -308,16 +308,21 @@ body {
 .main__content .todo-list__items .item__button--remove {
   width: 24px;
   height: 24px;
+  background-color: #526eff;
+  mask-image: url(/res/img/remove-icon.svg);
+  -webkit-mask-image: url(/res/img/remove-icon.svg);
+  mask-size: cover;
+  -webkit-mask-size: cover;
 }
 
-.main__content .todo-list__items .item__button--remove > svg {
+.main__content .todo-list__items .item__button--remove:hover {
+  background-color: #3652e3;
+}
+
+.main__content .todo-list__items .item__button--remove:active {
+  background-color: #233fd1;
+}
+
+svg.svg--remove {
   fill: #526eff;
-}
-
-.main__content .todo-list__items .item__button--remove:hover > svg {
-  fill: #3652e3;
-}
-
-.main__content .todo-list__items .item__button--remove:active > svg {
-  fill: #233fd1;
 }

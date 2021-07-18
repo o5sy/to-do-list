@@ -1,7 +1,7 @@
 @import "./common/_base";
 
 body {
-  @include flex-center;
+  @include flexCenter;
 }
 
 .main {
@@ -16,7 +16,7 @@ body {
     font-weight: bold;
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+    border-bottom: 1px solid $black-16;
   }
   &__content {
     .write-form {
@@ -30,35 +30,35 @@ body {
         padding: 16px;
         flex: 1;
         margin-right: 20px;
-        border: 1px solid rgba(17, 17, 17, 0.32);
+        border: 1px solid $black-32;
         box-sizing: border-box;
         border-radius: 8px;
         font-size: $s-h3;
 
         &::placeholder {
-          color: rgba(17, 17, 17, 0.32);
+          color: $black-32;
         }
         &:focus {
           outline: none;
-          border: 1px solid rgba(17, 17, 17, 0.64);
+          border: 1px solid $black-64;
         }
       }
       &__button {
-        @include flex-center;
+        @include flexCenter;
         width: 44px;
         height: 100%;
         border: none;
         padding: 0;
-        background-color: #526eff;
+        background-color: $primary-color-default;
         border-radius: 12px;
         font-size: 30px;
         color: #fff;
 
         &:hover {
-          background-color: #3652e3;
+          background-color: $primary-color-hover;
         }
         &:active {
-          background-color: #233fd1;
+          background-color: $primary-color-active;
         }
       }
     }
@@ -76,7 +76,6 @@ body {
 
         .item {
           display: flex;
-          // background-color: aqua;
 
           &:not(:last-child) {
             margin-bottom: 16px;
@@ -126,19 +125,28 @@ body {
           &__button--remove {
             width: 24px;
             height: 24px;
+            background-color: $primary-color-default;
+            mask-image: url(/res/img/remove-icon.svg);
+            -webkit-mask-image: url(/res/img/remove-icon.svg);
+            mask-size: cover;
+            -webkit-mask-size: cover;
 
-            > svg {
-              fill: #526eff;
+            &:hover {
+              background-color: $primary-color-hover;
             }
-            &:hover > svg {
-              fill: #3652e3;
-            }
-            &:active > svg {
-              fill: #233fd1;
+            &:active {
+              background-color: $primary-color-active;
             }
           }
         }
       }
     }
+  }
+}
+
+// svg 색상 컨트롤
+svg {
+  &.svg--remove {
+    fill: $primary-color-default;
   }
 }
