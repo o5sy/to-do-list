@@ -1,6 +1,6 @@
-@import "size";
+@import "_size";
 
-@mixin flex-center {
+@mixin flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;

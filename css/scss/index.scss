@@ -1,7 +1,7 @@
 @import "./common/_base";
 
 body {
-  @include flex-center;
+  @include flexCenter;
 }
 
 .main {
@@ -16,7 +16,7 @@ body {
     font-weight: bold;
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+    border-bottom: 1px solid $black-16;
   }
   &__content {
     .write-form {
@@ -30,35 +30,35 @@ body {
         padding: 16px;
         flex: 1;
         margin-right: 20px;
-        border: 1px solid rgba(17, 17, 17, 0.32);
+        border: 1px solid $black-32;
         box-sizing: border-box;
         border-radius: 8px;
         font-size: $s-h3;
 
         &::placeholder {
-          color: rgba(17, 17, 17, 0.32);
+          color: $black-32;
         }
         &:focus {
           outline: none;
-          border: 1px solid rgba(17, 17, 17, 0.64);
+          border: 1px solid $black-64;
         }
       }
       &__button {
-        @include flex-center;
+        @include flexCenter;
         width: 44px;
         height: 100%;
         border: none;
         padding: 0;
-        background-color: #526eff;
+        background-color: $primary-color-default;
         border-radius: 12px;
         font-size: 30px;
         color: #fff;
 
         &:hover {
-          background-color: #3652e3;
+          background-color: $primary-color-hover;
         }
         &:active {
-          background-color: #233fd1;
+          background-color: $primary-color-active;
         }
       }
     }
@@ -74,49 +74,67 @@ body {
       &__items {
         margin-left: 16px;
 
+        p {
+          height: 24px;
+          display: none;
+
+          &:only-child {
+            display: block;
+          }
+        }
         .item {
+          display: flex;
+
           &:not(:last-child) {
             margin-bottom: 16px;
           }
-          > input[type="checkbox"] {
-            display: none;
+          &__content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
 
-            + label {
-              display: flex;
-              align-items: center;
-              font-size: $s-h3;
-              cursor: pointer;
+            &::before {
+              content: " ";
 
+              // 인라인은 내용이 없으면 영역을 잡지 않음
+              // 따라서 inline-block으로 설정해서
+              // 형제 요소와는 인라인으로 배치되고 블록처럼 영역을 잡도록 함
+              display: inline-block;
+
+              background: url(/res/img/checkbox-default.svg) no-repeat center;
+              background-size: 24px 24px;
+              width: 24px;
+              height: 24px;
+              margin-right: 12px;
+            }
+            &:hover {
               &::before {
-                content: " ";
-
-                // 인라인은 내용이 없으면 영역을 잡지 않음
-                // 따라서 inline-block으로 설정해서
-                // 형제 요소와는 인라인으로 배치되고 블록처럼 영역을 잡도록 함
-                display: inline-block;
-
-                background: url(/res/img/checkbox-default.svg) no-repeat center;
-                background-size: 24px 24px;
-                width: 24px;
-                height: 24px;
-                margin-right: 12px;
-              }
-              &:hover {
-                &::before {
-                  background: url(/res/img/checkbox-hover.svg) no-repeat center;
-                }
+                background: url(/res/img/checkbox-hover.svg) no-repeat center;
               }
             }
+            &.checked {
+              text-decoration: line-through;
 
-            &:checked {
-              + label {
-                text-decoration: line-through;
-
-                &::before {
-                  background: url(/res/img/checkbox-checked.svg) no-repeat
-                    center;
-                }
+              &::before {
+                background: url(/res/img/checkbox-checked.svg) no-repeat center;
               }
+            }
+          }
+          &__button--remove {
+            width: 24px;
+            height: 24px;
+            background-color: $primary-color-default;
+            mask-image: url(/res/img/remove-icon.svg);
+            -webkit-mask-image: url(/res/img/remove-icon.svg);
+            mask-size: cover;
+            -webkit-mask-size: cover;
+
+            &:hover {
+              background-color: $primary-color-hover;
+            }
+            &:active {
+              background-color: $primary-color-active;
             }
           }
         }

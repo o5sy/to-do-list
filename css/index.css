@@ -162,6 +162,12 @@ button {
   font-weight: bold;
 }
 
+button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
 html {
   font-family: NanumGothic;
 }
@@ -257,22 +263,31 @@ body {
   margin-left: 16px;
 }
 
+.main__content .todo-list__items p {
+  height: 24px;
+  display: none;
+}
+
+.main__content .todo-list__items p:only-child {
+  display: block;
+}
+
+.main__content .todo-list__items .item {
+  display: flex;
+}
+
 .main__content .todo-list__items .item:not(:last-child) {
   margin-bottom: 16px;
 }
 
-.main__content .todo-list__items .item > input[type="checkbox"] {
-  display: none;
-}
-
-.main__content .todo-list__items .item > input[type="checkbox"] + label {
+.main__content .todo-list__items .item__content {
+  flex: 1;
   display: flex;
   align-items: center;
-  font-size: 16px;
   cursor: pointer;
 }
 
-.main__content .todo-list__items .item > input[type="checkbox"] + label::before {
+.main__content .todo-list__items .item__content::before {
   content: " ";
   display: inline-block;
   background: url(/res/img/checkbox-default.svg) no-repeat center;
@@ -282,14 +297,32 @@ body {
   margin-right: 12px;
 }
 
-.main__content .todo-list__items .item > input[type="checkbox"] + label:hover::before {
+.main__content .todo-list__items .item__content:hover::before {
   background: url(/res/img/checkbox-hover.svg) no-repeat center;
 }
 
-.main__content .todo-list__items .item > input[type="checkbox"]:checked + label {
+.main__content .todo-list__items .item__content.checked {
   text-decoration: line-through;
 }
 
-.main__content .todo-list__items .item > input[type="checkbox"]:checked + label::before {
+.main__content .todo-list__items .item__content.checked::before {
   background: url(/res/img/checkbox-checked.svg) no-repeat center;
+}
+
+.main__content .todo-list__items .item__button--remove {
+  width: 24px;
+  height: 24px;
+  background-color: #526eff;
+  mask-image: url(/res/img/remove-icon.svg);
+  -webkit-mask-image: url(/res/img/remove-icon.svg);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.main__content .todo-list__items .item__button--remove:hover {
+  background-color: #3652e3;
+}
+
+.main__content .todo-list__items .item__button--remove:active {
+  background-color: #233fd1;
 }
