@@ -148,16 +148,16 @@ button {
 
 @font-face {
   font-family: NanumGothic;
-  src: url(/res/font/NanumGothic/NanumGothic-Regular.eot);
-  src: url(/res/font/NanumGothic/NanumGothic-Regular.eot?#iefix) format("embedded-opentype"), url(/res/font/NanumGothic/NanumGothic-Regular.woff2) format("woff2"), url(/res/font/NanumGothic/NanumGothic-Regular.woff) format("woff"), url(/res/font/NanumGothic/NanumGothic-Regular.ttf) format("truetype");
+  src: url(../res/font/NanumGothic/NanumGothic-Regular.eot);
+  src: url(../res/font/NanumGothic/NanumGothic-Regular.eot?#iefix) format("embedded-opentype"), url(../res/font/NanumGothic/NanumGothic-Regular.woff2) format("woff2"), url(../res/font/NanumGothic/NanumGothic-Regular.woff) format("woff"), url(../res/font/NanumGothic/NanumGothic-Regular.ttf) format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: NanumGothic;
-  src: url(/res/font/NanumGothic/NanumGothic-Bold.eot);
-  src: url(/res/font/NanumGothic/NanumGothic-Bold.eot?#iefix) format("embedded-opentype"), url(/res/font/NanumGothic/NanumGothic-Bold.woff2) format("woff2"), url(/res/font/NanumGothic/NanumGothic-Bold.woff) format("woff"), url(/res/font/NanumGothic/NanumGothic-Bold.ttf) format("truetype");
+  src: url(../res/font/NanumGothic/NanumGothic-Bold.eot);
+  src: url(../res/font/NanumGothic/NanumGothic-Bold.eot?#iefix) format("embedded-opentype"), url(../res/font/NanumGothic/NanumGothic-Bold.woff2) format("woff2"), url(../res/font/NanumGothic/NanumGothic-Bold.woff) format("woff"), url(../res/font/NanumGothic/NanumGothic-Bold.ttf) format("truetype");
   font-style: normal;
   font-weight: bold;
 }
@@ -290,7 +290,7 @@ body {
 .main__content .todo-list__items .item__content::before {
   content: " ";
   display: inline-block;
-  background: url(/res/img/checkbox-default.svg) no-repeat center;
+  background: url(../res/img/checkbox-default.svg) no-repeat center;
   background-size: 24px 24px;
   width: 24px;
   height: 24px;
@@ -298,7 +298,7 @@ body {
 }
 
 .main__content .todo-list__items .item__content:hover::before {
-  background: url(/res/img/checkbox-hover.svg) no-repeat center;
+  background: url(../res/img/checkbox-hover.svg) no-repeat center;
 }
 
 .main__content .todo-list__items .item__content.checked {
@@ -306,15 +306,15 @@ body {
 }
 
 .main__content .todo-list__items .item__content.checked::before {
-  background: url(/res/img/checkbox-checked.svg) no-repeat center;
+  background: url(../res/img/checkbox-checked.svg) no-repeat center;
 }
 
 .main__content .todo-list__items .item__button--remove {
   width: 24px;
   height: 24px;
   background-color: #526eff;
-  mask-image: url(/res/img/remove-icon.svg);
-  -webkit-mask-image: url(/res/img/remove-icon.svg);
+  mask-image: url(../res/img/remove-icon.svg);
+  -webkit-mask-image: url(../res/img/remove-icon.svg);
   mask-size: cover;
   -webkit-mask-size: cover;
 }
