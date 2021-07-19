@@ -74,7 +74,7 @@ body {
       &__items {
         margin-left: 16px;
 
-        p {
+        .empty-guide {
           height: 24px;
           display: none;
 
@@ -93,20 +93,20 @@ body {
             display: flex;
             align-items: center;
             cursor: pointer;
+            margin-right: 12px;
 
             &::before {
-              content: " ";
-
               // 인라인은 내용이 없으면 영역을 잡지 않음
               // 따라서 inline-block으로 설정해서
               // 형제 요소와는 인라인으로 배치되고 블록처럼 영역을 잡도록 함
               display: inline-block;
-
+              content: " ";
               background: url(../res/img/checkbox-default.svg) no-repeat center;
               background-size: 24px 24px;
-              width: 24px;
+              min-width: 24px;
               height: 24px;
               margin-right: 12px;
+              align-self: flex-start;
             }
             &:hover {
               &::before {

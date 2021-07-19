@@ -263,12 +263,12 @@ body {
   margin-left: 16px;
 }
 
-.main__content .todo-list__items p {
+.main__content .todo-list__items .empty-guide {
   height: 24px;
   display: none;
 }
 
-.main__content .todo-list__items p:only-child {
+.main__content .todo-list__items .empty-guide:only-child {
   display: block;
 }
 
@@ -285,16 +285,18 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-right: 12px;
 }
 
 .main__content .todo-list__items .item__content::before {
-  content: " ";
   display: inline-block;
+  content: " ";
   background: url(../res/img/checkbox-default.svg) no-repeat center;
   background-size: 24px 24px;
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   margin-right: 12px;
+  align-self: flex-start;
 }
 
 .main__content .todo-list__items .item__content:hover::before {
